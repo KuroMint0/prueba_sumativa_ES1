@@ -33,8 +33,8 @@ PLATOS = [
 def inicio(request):
     return render(request, 'home.html', {'platos': PLATOS})
 
-def detalle(request, plato_id):
-    plato = next((plato for plato in PLATOS if plato['id'] == plato_id), None)
+def detalle(request, id):
+    plato = next((plato for plato in PLATOS if plato['id'] == id), None)
     if plato is None:
         raise Http404('El plato no existe.')
 
