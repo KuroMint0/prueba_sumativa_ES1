@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}La Caleta | Carta{% endblock %}
+
+{% block content %}
+    <div class="menu-shell p-3 p-md-5">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-3 mb-4">
+            <div>
+                <p class="section-label mb-2">Nuestra selección</p>
+                <h2 class="display-font mb-0">Para empezar, compartir y celebrar</h2>
+            </div>
+            <span class="text-secondary small">Precios en pesos chilenos</span>
+        </div>
+
+        <div class="row g-3">
+            {% for plato in platos %}
+                <div class="col-12 col-md-6">
+                    <a class="menu-card d-block p-4 text-reset text-decoration-none" href="{% url 'carta' plato.id %}">
+                        <div class="d-flex justify-content-between align-items-start gap-3">
+                            <div>
+                                <span class="badge text-bg-light mb-2">{{ plato.categoria }}</span>
+                                <h3 class="h5 mb-2">{{ plato.nombre }}</h3>
+                            </div>
+                            <span class="price">${{ plato.precio }}</span>
+                        </div>
+                        <p class="text-secondary small mb-3">{{ plato.descripcion }}</p>
+                        <div class="d-flex justify-content-between gap-3 text-secondary small">
+                            <span>{{ plato.tiempo }} min</span>
+                            <span class="text-decoration-underline">Ver detalle</span>
+                        </div>
+                    </a>
+                </div>
+            {% empty %}
+                <p class="text-secondary mb-0">Pronto tendremos nuevos platos para ti.</p>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

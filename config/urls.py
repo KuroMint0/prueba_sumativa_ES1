@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from carta import views
 
 urlpatterns = [
+    path('', views.inicio, name='home'),
+    path('carta/<int:plato_id>/', views.detalle, name='carta'),
     path('admin/', admin.site.urls),
 ]

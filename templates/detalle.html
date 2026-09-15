@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ plato.nombre }} | La Caleta{% endblock %}
+
+{% block content %}
+	<div class="row justify-content-center">
+		<div class="col-lg-9">
+			<a class="text-decoration-none text-secondary small" href="{% url 'home' %}">&larr; Volver a la carta</a>
+			<article class="menu-shell p-4 p-md-5 mt-3">
+				<div class="d-flex flex-column flex-md-row justify-content-between align-items-md-start gap-3 mb-4">
+					<div>
+						<span class="badge text-bg-light mb-3">{{ plato.categoria }}</span>
+						<h2 class="display-font mb-2">{{ plato.nombre }}</h2>
+						<p class="text-secondary mb-0">Una preparación de La Caleta hecha con ingredientes frescos y el sabor de nuestra cocina.</p>
+					</div>
+					<span class="price fs-4">${{ plato.precio }}</span>
+				</div>
+
+				<hr>
+
+				<p class="lead mb-4">{{ plato.descripcion }}</p>
+				<div class="row g-3">
+					<div class="col-sm-4">
+						<div class="border rounded p-3 h-100">
+							<span class="section-label d-block mb-1">Preparación</span>
+							<strong>{{ plato.tiempo }} minutos</strong>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="border rounded p-3 h-100">
+							<span class="section-label d-block mb-1">Perfil</span>
+							<strong>{% if plato.picante %}Picante{% else %}Suave{% endif %}</strong>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="border rounded p-3 h-100">
+							<span class="section-label d-block mb-1">Opción</span>
+							<strong>{% if plato.vegetariano %}Vegetariana{% else %}Tradicional{% endif %}</strong>
+						</div>
+					</div>
+				</div>
+			</article>
+		</div>
+	</div>
+{% endblock %}
