@@ -1,0 +1,15 @@
+Herramienta usada: Chat de Copilot en VSC
+Qué le pediste:
+Crear una base en `base.html` para representar la carta del restaurante "La Caleta", usando plantillas de Django y Bootstrap 5. Luego, permitir que cada plato mostrado en `home.html` enlace a una página de detalle. Finalmente, agregar el logo de `static/images` y separar los estilos CSS en un archivo dentro de `static`.
+Qué archivos generó:
+* `templates/base.html`
+* `templates/home.html`
+* `templates/detalle.html`
+* `static/css/styles.css`
+* Se utilizó el recurso existente `static/images/logo.png`.
+Qué cambiaste después (LA IA):
+* `base.html` quedó como plantilla base con bloques Django para título, contenido, CSS adicional y JavaScript adicional.
+* Se agregó Bootstrap 5, la identidad visual de La Caleta, la navbar, el logo y el nombre "La Caleta".
+* `home.html` muestra los platos en tarjetas Bootstrap y cada tarjeta incluye un enlace a su detalle.
+* `detalle.html` muestra el nombre, categoría, precio, descripción, tiempo de preparación, perfil de picante y opción vegetariana del plato.
+* Los estilos propios se trasladaron desde `base.html` a `static/css/styles.css` y se cargan usando `{% static 'css/styles.css' %}`.

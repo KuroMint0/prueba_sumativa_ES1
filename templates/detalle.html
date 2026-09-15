@@ -11,7 +11,11 @@
 					<div>
 						<span class="badge text-bg-light mb-3">{{ plato.categoria }}</span>
 						<h2 class="display-font mb-2">{{ plato.nombre }}</h2>
-						<p class="text-secondary mb-0">Una preparación de La Caleta hecha con ingredientes frescos y el sabor de nuestra cocina.</p>
+						<div class="col-sm-8">
+                            <div class="border rounded p-2 h-10">
+                                <span class="section-label d-block mb-1">{{ etiqueta }}</span>
+                            </div>
+                        </div>
 					</div>
 					<span class="price fs-4">${{ plato.precio }}</span>
 				</div>

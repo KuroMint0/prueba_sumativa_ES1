@@ -10,121 +10,22 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-	<style>
-		:root {
-			--caleta-ink: #16363d;
-			--caleta-teal: #0f6b70;
-			--caleta-coral: #e8755d;
-			--caleta-sand: #f7f1e8;
-			--caleta-line: #d9e4df;
-		}
-
-		body {
-			background: var(--caleta-sand);
-			color: var(--caleta-ink);
-			font-family: 'DM Sans', sans-serif;
-		}
-
-		.navbar-brand, h1, h2, h3, .display-font {
-			font-family: 'Playfair Display', serif;
-		}
-
-		.navbar {
-			background: var(--caleta-ink);
-		}
-
-		.brand-mark {
-			color: #f9c68a;
-			font-size: 1.55rem;
-			letter-spacing: .03em;
-		}
-
-		.brand-subtitle {
-			color: #b7d4d0;
-			font-size: .68rem;
-			letter-spacing: .16em;
-			text-transform: uppercase;
-		}
-
-		.hero {
-			background: linear-gradient(120deg, rgba(15, 107, 112, .96), rgba(22, 54, 61, .92)),
-				radial-gradient(circle at 85% 20%, rgba(248, 198, 138, .5), transparent 30%);
-			color: white;
-			overflow: hidden;
-			position: relative;
-		}
-
-		.hero::after {
-			border: 1px solid rgba(255, 255, 255, .17);
-			border-radius: 50%;
-			content: '';
-			height: 22rem;
-			position: absolute;
-			right: -7rem;
-			top: -10rem;
-			width: 22rem;
-		}
-
-		.hero-kicker {
-			color: #f9c68a;
-			font-size: .78rem;
-			font-weight: 700;
-			letter-spacing: .2em;
-			text-transform: uppercase;
-		}
-
-		.menu-shell {
-			background: rgba(255, 255, 255, .78);
-			border: 1px solid var(--caleta-line);
-			border-radius: .5rem;
-		}
-
-		.menu-card {
-			background: #fffdf9;
-			border: 1px solid var(--caleta-line);
-			border-radius: .45rem;
-			height: 100%;
-			transition: border-color .2s ease, transform .2s ease;
-		}
-
-		.menu-card:hover {
-			border-color: var(--caleta-coral);
-			transform: translateY(-3px);
-		}
-
-		.price {
-			color: var(--caleta-coral);
-			font-weight: 700;
-			white-space: nowrap;
-		}
-
-		.section-label {
-			color: var(--caleta-teal);
-			font-size: .78rem;
-			font-weight: 700;
-			letter-spacing: .14em;
-			text-transform: uppercase;
-		}
-
-		footer {
-			background: var(--caleta-ink);
-			color: #d7e7e2;
-		}
-	</style>
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 	{% block extra_css %}{% endblock %}
 </head>
 <body>
 	<nav class="navbar navbar-dark py-3">
 		<div class="container">
 			<a class="navbar-brand d-flex align-items-center gap-3" href="{% url 'home' %}">
-				<span class="brand-mark">La Caleta</span>
+				<img class="brand-logo" src="{% static 'images/logo.png' %}" alt="La Caleta">
+				<span class="brand-name">La Caleta</span>
 			</a>
 			<a class="btn btn-sm btn-outline-light rounded-pill px-3" href="#carta">Ver carta</a>
 		</div>
 	</nav>
 
 	<header class="hero py-5">
-		<div class="container py-4 position-relative" style="z-index: 1;">
+		<div class="container py-4 hero-content">
 			<p class="hero-kicker mb-3">Sabores honestos del litoral</p>
 			<h1 class="display-4 fw-bold mb-3">La carta de La Caleta</h1>
 			<p class="lead mb-0 col-lg-6">Productos frescos, recetas de siempre y el gusto de compartir alrededor de una buena mesa.</p>
